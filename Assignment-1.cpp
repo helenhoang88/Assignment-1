@@ -7,8 +7,9 @@
 
 double photon_energy_calculation(int atomic_number, int initial_quantum_number, int final_quantum_number)
 {
-
-  return 0.0;
+  const double Rydberg_constant = 13.6;
+  double energy = Rydberg_constant * atomic_number * atomic_number * (1.0 / (final_quantum_number * final_quantum_number) - 1.0 / (initial_quantum_number * initial_quantum_number));
+  return energy;
 }
 
 int main()
@@ -77,7 +78,7 @@ int main()
       // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
       photon_energy = photon_energy_calculation(atomic_number, initial_quantum_number, final_quantum_number);
 
-      // Output answern
+      // Output answer
       std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
 
       // Ask user if they want to do another calculation
