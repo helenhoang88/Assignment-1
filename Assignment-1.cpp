@@ -7,8 +7,8 @@
 
 double photon_energy_calculation(int atomic_number, int initial_quantum_number, int final_quantum_number)
 {
-  const double Rydberg_constant = 13.6;
-  double energy = Rydberg_constant * atomic_number * atomic_number * (1.0 / (final_quantum_number * final_quantum_number) - 1.0 / (initial_quantum_number * initial_quantum_number));
+  const double rydberg_constant = 13.6;
+  double energy = rydberg_constant * atomic_number * atomic_number * (1.0 / (final_quantum_number * final_quantum_number) - 1.0 / (initial_quantum_number * initial_quantum_number));
   return energy;
 }
 
