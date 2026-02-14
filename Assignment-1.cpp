@@ -15,7 +15,6 @@ double photon_energy_calculation(int atomic_number, int initial_quantum_number, 
 int main()
 {
   char response;
-
   response = 'y';
   while(response == 'y') 
   {
@@ -26,9 +25,9 @@ int main()
       const double ev_to_joule{1.60217663e-19};
       double photon_energy;
 
-      // Ask user to enter atomic number
       std::cout<<"Enter atomic number: ";
       std::cin>>atomic_number;
+      //loops if input format is incorrect
       while(std::cin.fail())
       {
         std::cout<<"Invalid input. Please enter an integer for atomic number: ";
@@ -37,11 +36,12 @@ int main()
         std::cin>>atomic_number;
       }
 
-      // Ask user to enter initial and final quantum numbers
+      //loops if final quantum number is larger than initial
       while(true)
       {
         std::cout<<"Enter initial quantum number: ";
         std::cin>>initial_quantum_number;
+        //loops if input format is incorrect
         while(std::cin.fail())
         {
           std::cout<<"Invalid input. Please enter an integer for initial quantum number: ";
@@ -52,6 +52,7 @@ int main()
 
         std::cout<<"Enter final quantum number: ";
         std::cin>>final_quantum_number;
+        //loops if input format is incorrect
         while(std::cin.fail())
         {
           std::cout<<"Invalid input. Please enter an integer for final quantum number: ";
@@ -59,13 +60,14 @@ int main()
           std::cin.ignore();
           std::cin>>final_quantum_number;
         }
-
         if(final_quantum_number < initial_quantum_number)
           break;
         std::cout<<"Final quantum number must be less than initial quantum number. Please enter again."<<std::endl;
       }
+
       std::cout<<"Enter unit (e for eV, j for Joules): ";
       std::cin>>unit;
+      //loops if unit is invalid
       while(unit != 'e' && unit != 'j')
       {
         std::cout<<"Invalid input. Please enter 'e' for eV or 'j' for Joules: ";
@@ -81,18 +83,18 @@ int main()
       else
         std::cout<<"The transition energy is: "<<std::setprecision(3)<<photon_energy * ev_to_joule<<" Joules"<<std::endl;
 
-
       // Ask user if they want to do another calculation
+      // Asks again if y or n is not given
       while(true)
       {
         std::cout<<"Do you want to do another calculation? (y/n): ";
         std::cin>>response;
         if (response == 'n' || response == 'y')
           break;
-        std::cout<<"Gimme a y or n!!!"<<std::endl;
+        std::cout<<"Give a y or n!"<<std::endl;
       }
       if(response == 'n'){
-        std::cout<<"GUD BAI!!!"<<std::endl;
+        std::cout<<"Goodbye!"<<std::endl;
       }
       else
         continue;
