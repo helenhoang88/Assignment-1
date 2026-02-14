@@ -27,53 +27,49 @@ int main()
       double photon_energy;
 
       // Ask user to enter atomic number
-      std::cout << "Enter atomic number: ";
-      std::cin >> atomic_number;
+      std::cout<<"Enter atomic number: ";
+      std::cin>>atomic_number;
       while(std::cin.fail())
       {
-        std::cout << "Invalid input. Please enter an integer for atomic number: ";
+        std::cout<<"Invalid input. Please enter an integer for atomic number: ";
         std::cin.clear();
         std::cin.ignore();
-        std::cin >> atomic_number;
+        std::cin>>atomic_number;
       }
 
       // Ask user to enter initial and final quantum numbers
       while(true)
       {
-        std::cout << "Enter initial quantum number: ";
-        std::cin >> initial_quantum_number;
+        std::cout<<"Enter initial quantum number: ";
+        std::cin>>initial_quantum_number;
         while(std::cin.fail())
         {
-          std::cout << "Invalid input. Please enter an integer for initial quantum number: ";
+          std::cout<<"Invalid input. Please enter an integer for initial quantum number: ";
           std::cin.clear();
           std::cin.ignore();
-          std::cin >> initial_quantum_number;
+          std::cin>>initial_quantum_number;
         }
 
-        std::cout << "Enter final quantum number: ";
-        std::cin >> final_quantum_number;
+        std::cout<<"Enter final quantum number: ";
+        std::cin>>final_quantum_number;
         while(std::cin.fail())
         {
-          std::cout << "Invalid input. Please enter an integer for final quantum number: ";
+          std::cout<<"Invalid input. Please enter an integer for final quantum number: ";
           std::cin.clear();
           std::cin.ignore();
-          std::cin >> final_quantum_number;
+          std::cin>>final_quantum_number;
         }
 
         if(final_quantum_number < initial_quantum_number)
-        {
           break;
-        }
-        
-        std::cout << "Final quantum number must be less than initial quantum number. Please enter again." << std::endl;
+        std::cout<<"Final quantum number must be less than initial quantum number. Please enter again."<<std::endl;
       }
-
-      std::cout << "Enter unit (e for eV, j for Joules): ";
-      std::cin >> unit;
+      std::cout<<"Enter unit (e for eV, j for Joules): ";
+      std::cin>>unit;
       while(unit != 'e' && unit != 'j')
       {
-        std::cout << "Invalid input. Please enter 'e' for eV or 'j' for Joules: ";
-        std::cin >> unit;
+        std::cout<<"Invalid input. Please enter 'e' for eV or 'j' for Joules: ";
+        std::cin>>unit;
       }
 
       // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
@@ -81,27 +77,25 @@ int main()
 
       // Output answer
       if (unit == 'e')
-        std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
+        std::cout<<"The transition energy is: "<<photon_energy<<" eV"<<std::endl;
       else
-        std::cout << "The transition energy is: " << photon_energy * ev_to_joule << " Joules" << std::endl;
+        std::cout<<"The transition energy is: "<<photon_energy * ev_to_joule<<" Joules"<<std::endl;
 
 
       // Ask user if they want to do another calculation
       while(true)
       {
-        std::cout << "Do you want to do another calculation? (y/n): ";
-        std::cin >> response;
+        std::cout<<"Do you want to do another calculation? (y/n): ";
+        std::cin>>response;
         if (response == 'n' || response == 'y')
           break;
-        std::cout << "Gimme a y or n!!!" << std::endl;
+        std::cout<<"Gimme a y or n!!!"<<std::endl;
       }
       if(response == 'n'){
-        std::cout << "GUD BAI!!!" << std::endl;
+        std::cout<<"GUD BAI!!!"<<std::endl;
       }
-      else {
+      else
         continue;
-      }
   }
-
   return 0;
 }
