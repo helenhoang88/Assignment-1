@@ -80,7 +80,11 @@ int main()
       photon_energy = photon_energy_calculation(atomic_number, initial_quantum_number, final_quantum_number);
 
       // Output answer
-      std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
+      if (unit == 'e')
+        std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
+      else
+        std::cout << "The transition energy is: " << photon_energy * ev_to_joule << " Joules" << std::endl;
+
 
       // Ask user if they want to do another calculation
       while(true)
