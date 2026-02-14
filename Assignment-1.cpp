@@ -33,25 +33,46 @@ int main()
         std::cin.ignore();
         std::cin >> atomic_number;
       }
+
       // Ask user to enter initial and final quantum numbers
-      std::cout << "Enter initial quantum number: ";
-      std::cin >> initial_quantum_number;
-      while (std::cin.fail())
+      while (true)
       {
-        std::cout << "Invalid input. Please enter an integer for initial quantum number: ";
-        std::cin.clear();
-        std::cin.ignore();
+        std::cout << "Enter initial quantum number: ";
         std::cin >> initial_quantum_number;
-      }
-      std::cout << "Enter final quantum number: ";
-      std::cin >> final_quantum_number;
-      while (std::cin.fail())
-      {
-        std::cout << "Invalid input. Please enter an integer for final quantum number: ";
-        std::cin.clear();
-        std::cin.ignore();
+        while (std::cin.fail())
+        {
+          std::cout << "Invalid input. Please enter an integer for initial quantum number: ";
+          std::cin.clear();
+          std::cin.ignore();
+          std::cin >> initial_quantum_number;
+        }
+
+        std::cout << "Enter final quantum number: ";
         std::cin >> final_quantum_number;
+        while (std::cin.fail())
+        {
+          std::cout << "Invalid input. Please enter an integer for final quantum number: ";
+          std::cin.clear();
+          std::cin.ignore();
+          std::cin >> final_quantum_number;
+        }
+
+        if (final_quantum_number < initial_quantum_number)
+        {
+          break;
+        }
+        
+        std::cout << "Final quantum number must be less than initial quantum number. Please enter again." << std::endl;
       }
+
+      std::cout << "Enter unit (e for eV, j for Joules): ";
+      std::cin >> unit;
+      while (unit != 'e' && unit != 'j')
+      {
+        std::cout << "Invalid input. Please enter 'e' for eV or 'j' for Joules: ";
+        std::cin >> unit;
+      }
+
       // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
 
       // Output answer
@@ -70,7 +91,7 @@ int main()
       }
       else {
         continue;
-      }    
+      }
   }
 
   return 0;
