@@ -11,6 +11,7 @@ int main()
   int atomic_number;
   int initial_quantum_number;
   int final_quantum_number;
+  const double ev_to_joule{1.60217663e-19}; 
 
   // Ask user to enter atomic number
   std::cout << "Enter atomic number: ";
