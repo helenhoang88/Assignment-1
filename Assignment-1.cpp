@@ -5,28 +5,45 @@
 #include<iostream>
 #include<iomanip>
 
+double photon_energy_calculation()
+{
+
+  return 0.0;
+}
+
 int main()
 {
-  // Declare variables here
-  int atomic_number;
-  int initial_quantum_number;
-  int final_quantum_number;
-  const double ev_to_joule{1.60217663e-19}; 
+  char response;
 
-  // Ask user to enter atomic number
-  std::cout << "Enter atomic number: ";
-  std::cin >> atomic_number;
-  // Ask user to enter initial and final quantum numbers
-  std::cout << "Enter intial quantum number: ";
-  std::cin >> initial_quantum_number;
-  std::cout << "Enter final quantum number: ";
-  std::cin >> final_quantum_number;
-  // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
+  response = 'y';
+  while (response == 'y') {
+      int atomic_number;
+      int initial_quantum_number;
+      int final_quantum_number;
+      const double ev_to_joule{1.60217663e-19};
 
-  // Output answer
-  std::cout << "Atomic number check!! " << atomic_number << std::endl;
-  std::cout << "Inital quantum number check!! " << initial_quantum_number << std::endl;
-  std::cout << "Final quantum number check!! " << final_quantum_number << std::endl;
+      // Ask user to enter atomic number
+      std::cout << "Enter atomic number: ";
+      std::cin >> atomic_number;
+      // Ask user to enter initial and final quantum numbers
+      std::cout << "Enter intial quantum number: ";
+      std::cin >> initial_quantum_number;
+      std::cout << "Enter final quantum number: ";
+      std::cin >> final_quantum_number;
+      // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
+
+      // Output answer
+      std::cout << "The transition energy is: " << std::endl;
+
+      // Ask user if they want to do another calculation
+      std::cout << "Do you want to do another calculation? (y/n): ";
+      std::cin >> response;
+      if (response == 'n'){
+        std::cout << "Goodbye!" << std::endl;
+      }
+      else
+        continue;
+  }
 
   return 0;
 }
