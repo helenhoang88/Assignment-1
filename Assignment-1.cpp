@@ -17,7 +17,8 @@ int main()
   char response;
 
   response = 'y';
-  while (response == 'y') {
+  while(response == 'y') 
+  {
       int atomic_number;
       int initial_quantum_number;
       int final_quantum_number;
@@ -28,7 +29,7 @@ int main()
       // Ask user to enter atomic number
       std::cout << "Enter atomic number: ";
       std::cin >> atomic_number;
-      while (std::cin.fail())
+      while(std::cin.fail())
       {
         std::cout << "Invalid input. Please enter an integer for atomic number: ";
         std::cin.clear();
@@ -37,11 +38,11 @@ int main()
       }
 
       // Ask user to enter initial and final quantum numbers
-      while (true)
+      while(true)
       {
         std::cout << "Enter initial quantum number: ";
         std::cin >> initial_quantum_number;
-        while (std::cin.fail())
+        while(std::cin.fail())
         {
           std::cout << "Invalid input. Please enter an integer for initial quantum number: ";
           std::cin.clear();
@@ -51,7 +52,7 @@ int main()
 
         std::cout << "Enter final quantum number: ";
         std::cin >> final_quantum_number;
-        while (std::cin.fail())
+        while(std::cin.fail())
         {
           std::cout << "Invalid input. Please enter an integer for final quantum number: ";
           std::cin.clear();
@@ -59,7 +60,7 @@ int main()
           std::cin >> final_quantum_number;
         }
 
-        if (final_quantum_number < initial_quantum_number)
+        if(final_quantum_number < initial_quantum_number)
         {
           break;
         }
@@ -69,7 +70,7 @@ int main()
 
       std::cout << "Enter unit (e for eV, j for Joules): ";
       std::cin >> unit;
-      while (unit != 'e' && unit != 'j')
+      while(unit != 'e' && unit != 'j')
       {
         std::cout << "Invalid input. Please enter 'e' for eV or 'j' for Joules: ";
         std::cin >> unit;
@@ -82,14 +83,15 @@ int main()
       std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
 
       // Ask user if they want to do another calculation
-      while (true){
+      while(true)
+      {
         std::cout << "Do you want to do another calculation? (y/n): ";
         std::cin >> response;
         if (response == 'n' || response == 'y')
           break;
         std::cout << "Gimme a y or n!!!" << std::endl;
       }
-      if (response == 'n'){
+      if(response == 'n'){
         std::cout << "GUD BAI!!!" << std::endl;
       }
       else {
