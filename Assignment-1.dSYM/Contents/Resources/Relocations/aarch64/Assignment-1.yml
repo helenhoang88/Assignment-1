@@ -2,8 +2,9 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/helenhoang/Documents/GitHub/Assignment-1/Assignment-1'
 relocations:
-  - { offset: 0x24EE, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xF45A, symBinAddr: 0x10000C038, symSize: 0x0 }
-  - { offset: 0x26DE, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_Assignment_1.cpp, symObjAddr: 0x224, symBinAddr: 0x100007DF4, symSize: 0x14 }
-  - { offset: 0x26F5, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x1E8, symBinAddr: 0x100007DB8, symSize: 0x3C }
-  - { offset: 0x2713, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100007C84, symSize: 0x134 }
+  - { offset: 0x253E, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xFB0C, symBinAddr: 0x10000C050, symSize: 0x0 }
+  - { offset: 0x272E, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_Assignment_1.cpp, symObjAddr: 0x428, symBinAddr: 0x100007CD8, symSize: 0x14 }
+  - { offset: 0x2745, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x3EC, symBinAddr: 0x100007C9C, symSize: 0x3C }
+  - { offset: 0x2763, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x8, symBinAddr: 0x100007A40, symSize: 0x25C }
+  - { offset: 0x27EF, size: 0x8, addend: 0x0, symName: __Z25photon_energy_calculationv, symObjAddr: 0x0, symBinAddr: 0x100007A38, symSize: 0x8 }
 ...
