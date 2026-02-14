@@ -5,7 +5,7 @@
 #include<iostream>
 #include<iomanip>
 
-double photon_energy_calculation()
+double photon_energy_calculation(int atomic_number, int initial_quantum_number, int final_quantum_number)
 {
 
   return 0.0;
@@ -22,6 +22,7 @@ int main()
       int final_quantum_number;
       char unit;
       const double ev_to_joule{1.60217663e-19};
+      double photon_energy;
 
       // Ask user to enter atomic number
       std::cout << "Enter atomic number: ";
@@ -74,9 +75,10 @@ int main()
       }
 
       // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
+      photon_energy = photon_energy_calculation(atomic_number, initial_quantum_number, final_quantum_number);
 
-      // Output answer
-      std::cout << "The transition energy is: " << std::endl;
+      // Output answern
+      std::cout << "The transition energy is: " << photon_energy << " eV" << std::endl;
 
       // Ask user if they want to do another calculation
       while (true){
