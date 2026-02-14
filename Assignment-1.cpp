@@ -14,9 +14,9 @@ double photon_energy_calculation(int atomic_number, int initial_quantum_number, 
 
 int main()
 {
-  char response;
-  response = 'y';
-  while(response == 'y') 
+  char repeat_yn;
+  repeat_yn = 'y';
+  while(repeat_yn == 'y') 
   {
       int atomic_number;
       int initial_quantum_number;
@@ -85,15 +85,16 @@ int main()
 
       // Ask user if they want to do another calculation
       // Asks again if y or n is not given
-      while(true)
+      
+      std::cout<<"Do you want to do another calculation? (y/n): ";
+      std::cin>>repeat_yn;
+      while(repeat_yn != 'y' && repeat_yn != 'n')
       {
-        std::cout<<"Do you want to do another calculation? (y/n): ";
-        std::cin>>response;
-        if (response == 'n' || response == 'y')
-          break;
         std::cout<<"Give a y or n!"<<std::endl;
+        std::cout<<"Do you want to do another calculation? (y/n): ";
+        std::cin>>repeat_yn;
       }
-      if(response == 'n'){
+      if(repeat_yn == 'n'){
         std::cout<<"Goodbye!"<<std::endl;
       }
       else
