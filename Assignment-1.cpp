@@ -77,9 +77,9 @@ int main()
 
       // Output answer
       if (unit == 'e')
-        std::cout<<"The transition energy is: "<<photon_energy<<" eV"<<std::endl;
+        std::cout<<"The transition energy is: "<<std::setprecision(3)<<photon_energy<<" eV"<<std::endl;
       else
-        std::cout<<"The transition energy is: "<<photon_energy * ev_to_joule<<" Joules"<<std::endl;
+        std::cout<<"The transition energy is: "<<std::setprecision(3)<<photon_energy * ev_to_joule<<" Joules"<<std::endl;
 
 
       // Ask user if they want to do another calculation
